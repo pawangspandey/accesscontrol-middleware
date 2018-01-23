@@ -1,0 +1,19 @@
+{
+  "name": "accesscontrol-middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors test --recursive"
+  },
+  "author": "pawan <pawang.s.pandey@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "accesscontrol": "2.2.0",
+    "chai": "4.1.2",
+    "cross-env": "5.1.3",
+    "mocha": "5.0.0",
+    "sinon": "4.2.0",
+    "sinon-express-mock": "2.0.0"
+  }
+}
