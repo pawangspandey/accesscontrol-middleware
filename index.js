@@ -52,7 +52,6 @@ class AccessControlMiddleware {
   
         default:
         return next(new Error('invalid action'));
-        break;
       }
 
       // as most passport strategy assign user object to req.
