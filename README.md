@@ -36,7 +36,7 @@ config any express route
 ```js
 
 route.put('/profile/:userId',
-  accessControlMiddleware({ 
+  accessControlMiddleware.check({ 
     resource : 'profile',
     action : 'update',
     checkOwnerShip : true, // optional if false or not provided will check any permission of action
