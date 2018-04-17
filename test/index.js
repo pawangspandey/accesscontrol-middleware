@@ -406,5 +406,33 @@ describe('## User permission check ', () => {
     })
   
   });
+
+describe('## comparison of operands', () => {
+
+  it('## should value of operands with different data type.', () => {
+    const request = {
+      user : {
+        role: 'user',
+        _id: 123456
+      },
+      params : {
+        userId: '123456'
+      } 
+    };
+
+    const req = mockReq(request);
+    const res = mockRes();
+    const next = sinon.spy();
+
+    middleware = accessControlMiddleware.check({ 
+      resource : 'video',
+      action: 'delete',
+      checkOwnerShip : true,
+      operands : [{ source : 'user', key : '_id' }, { source : 'params', key : 'userId' }]
+     })(req, res, next);
+
+    expect(next.calledOnce).to.be.equal(true);
+  })
+})
   
 
