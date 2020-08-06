@@ -20,7 +20,7 @@ class AccessControlMiddleware {
    * @returns {function} middleware to append in express.js route.
    */
 
-  check ({ resource, action, checkOwnerShip = false, operands = []}) {
+  check ({ resource, action, checkOwnerShip = false, operands = [], customResponse = null}) {
 
     return (req, res, next) => {
 
@@ -85,7 +85,7 @@ class AccessControlMiddleware {
         return next();
       } 
       else {
-        return res.status(403).send();
+        return res.status(403).send(customResponse);
       }
     };
   }
